@@ -1,0 +1,93 @@
+<div class="container py-5">
+    <form [formGroup]="creationForm" (ngSubmit)="onSubmit()">
+        <div class="row pb-3">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample1">Sample 1</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample1" type="text" class="form-control" name="sample1" id="sample1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample2">Sample 2</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample2" type="text" class="form-control" name="sample2" id="sample2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample3">Sample 3</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample3" type="text" class="form-control" name="sample3" id="sample3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample4">Sample 4</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample4" type="text" class="form-control" name="sample4" id="sample4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample5">Sample 5</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample5" type="text" class="form-control" name="sample5" id="sample5">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample6">Sample 6</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample6" type="text" class="form-control" name="sample6" id="sample6">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample7">Sample 7</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample7" type="text" class="form-control" name="sample7" id="sample7">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample8">Sample 8</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample8" type="text" class="form-control" name="sample8" id="sample8">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample9">Sample 9</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample9" type="text" class="form-control" name="sample9" id="sample9">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="sample10">Sample 10</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="sample10" type="text" class="form-control" name="sample10"
+                            id="sample10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button type="reset" class="btn btn-danger" (click)="resetForm()">Reset</button>
+    </form>
+</div>

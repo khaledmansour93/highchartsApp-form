@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms'; // Module needed to use FormBuilder
+import { ChartModule } from 'angular-highcharts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddFormComponent } from './add-form/add-form.component';
+import { HighchartsChartComponent } from './highcharts-chart/highcharts-chart.component'; // Module needed to use Highcharts chart
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddFormComponent,
+    HighchartsChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    ChartModule // add ChartModule to your imports
   ],
   providers: [],
   bootstrap: [AppComponent]
