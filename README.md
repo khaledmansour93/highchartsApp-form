@@ -1,4 +1,4 @@
-# HighchartsApp
+# HighchartsAppForm
 
 The goal of this project is to display form data on a column chart in an Angular app using angular-highcharts library
 
