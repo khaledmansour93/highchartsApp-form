@@ -1,5 +1,8 @@
 <div class="container py-5">
-    <form [formGroup]="creationForm" (ngSubmit)="onSubmit()">
+    <!-- [formGroup] tracks the value & validity of input fields -->
+    <!-- (ngSubmit) captures form values of "creationForm" from the "ngSubmit" event -->
+    <!-- novalidate disables browser validator, so the form isn't validated by built-in HTML5 validation when submitted -->
+    <form [formGroup]="creationForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="row pb-3">
             <div class="col-md-6">
                 <div class="row">
@@ -7,7 +10,19 @@
                         <label for="sample1">Sample 1</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample1" type="text" class="form-control" name="sample1" id="sample1">
+                        <!-- [ngClass] styles input field border using bootstrap CSS classes based on its validity -->
+                        <!-- shadow-none is a bootstrap CSS class that removes shadow from an input field -->
+                        <!-- creationForm.controls.sample1?.valid finds out if sample1 is valid -->
+                        <input
+                            [ngClass]="creationForm.controls.sample1.valid?'border border-success':'border border-danger'"
+                            formControlName="sample1" type="text" class="form-control shadow-none" name="sample1"
+                            id="sample1">
+                        <!-- creationForm.controls.sample1?.dirty => sample1 is dirty if the user has changed the value in the form -->
+                        <!-- creationForm.controls.sample1?.touched => sample1 is touched if the user has triggered a blur event on it -->
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample1?.valid && creationForm.controls.sample1?.dirty && creationForm.controls.sample1?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -15,7 +30,14 @@
                         <label for="sample2">Sample 2</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample2" type="text" class="form-control" name="sample2" id="sample2">
+                        <input
+                            [ngClass]="creationForm.controls.sample2.valid?'border border-success':'border border-danger'"
+                            formControlName="sample2" type="text" class="form-control shadow-none" name="sample2"
+                            id="sample2">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample2?.valid && creationForm.controls.sample2?.dirty && creationForm.controls.sample2?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -23,7 +45,14 @@
                         <label for="sample3">Sample 3</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample3" type="text" class="form-control" name="sample3" id="sample3">
+                        <input
+                            [ngClass]="creationForm.controls.sample3.valid?'border border-success':'border border-danger'"
+                            formControlName="sample3" type="text" class="form-control shadow-none" name="sample3"
+                            id="sample3">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample3?.valid && creationForm.controls.sample3?.dirty && creationForm.controls.sample3?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -31,7 +60,14 @@
                         <label for="sample4">Sample 4</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample4" type="text" class="form-control" name="sample4" id="sample4">
+                        <input
+                            [ngClass]="creationForm.controls.sample4.valid?'border border-success':'border border-danger'"
+                            formControlName="sample4" type="text" class="form-control shadow-none" name="sample4"
+                            id="sample4">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample4?.valid && creationForm.controls.sample4?.dirty && creationForm.controls.sample4?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -39,7 +75,14 @@
                         <label for="sample5">Sample 5</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample5" type="text" class="form-control" name="sample5" id="sample5">
+                        <input
+                            [ngClass]="creationForm.controls.sample5.valid?'border border-success':'border border-danger'"
+                            formControlName="sample5" type="text" class="form-control shadow-none" name="sample5"
+                            id="sample5">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample5?.valid && creationForm.controls.sample5?.dirty && creationForm.controls.sample5?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -49,7 +92,14 @@
                         <label for="sample6">Sample 6</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample6" type="text" class="form-control" name="sample6" id="sample6">
+                        <input
+                            [ngClass]="creationForm.controls.sample6.valid?'border border-success':'border border-danger'"
+                            formControlName="sample6" type="text" class="form-control shadow-none" name="sample6"
+                            id="sample6">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample6?.valid && creationForm.controls.sample6?.dirty && creationForm.controls.sample6?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -57,7 +107,14 @@
                         <label for="sample7">Sample 7</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample7" type="text" class="form-control" name="sample7" id="sample7">
+                        <input
+                            [ngClass]="creationForm.controls.sample7.valid?'border border-success':'border border-danger'"
+                            formControlName="sample7" type="text" class="form-control shadow-none" name="sample7"
+                            id="sample7">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample7?.valid && creationForm.controls.sample7?.dirty && creationForm.controls.sample7?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -65,7 +122,14 @@
                         <label for="sample8">Sample 8</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample8" type="text" class="form-control" name="sample8" id="sample8">
+                        <input
+                            [ngClass]="creationForm.controls.sample8.valid?'border border-success':'border border-danger'"
+                            formControlName="sample8" type="text" class="form-control shadow-none" name="sample8"
+                            id="sample8">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample8?.valid && creationForm.controls.sample8?.dirty && creationForm.controls.sample8?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -73,7 +137,14 @@
                         <label for="sample9">Sample 9</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample9" type="text" class="form-control" name="sample9" id="sample9">
+                        <input
+                            [ngClass]="creationForm.controls.sample9.valid?'border border-success':'border border-danger'"
+                            formControlName="sample9" type="text" class="form-control shadow-none" name="sample9"
+                            id="sample9">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample9?.valid && creationForm.controls.sample9?.dirty && creationForm.controls.sample9?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -81,13 +152,20 @@
                         <label for="sample10">Sample 10</label>
                     </div>
                     <div class="col-md-6">
-                        <input formControlName="sample10" type="text" class="form-control" name="sample10"
+                        <input
+                            [ngClass]="creationForm.controls.sample10.valid?'border border-success':'border border-danger'"
+                            formControlName="sample10" type="text" class="form-control shadow-none" name="sample10"
                             id="sample10">
+                        <div class="text-danger"
+                            *ngIf="!creationForm.controls.sample10?.valid && creationForm.controls.sample10?.dirty && creationForm.controls.sample10?.touched">
+                            Only numbers allowed!
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <!-- Disables the submit button if our form is not valid -->
+        <button type="submit" [disabled]="!creationForm.valid" class="btn btn-primary me-2">Submit</button>
         <button type="reset" class="btn btn-danger" (click)="resetForm()">Reset</button>
     </form>
 </div>

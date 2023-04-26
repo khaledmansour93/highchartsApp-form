@@ -11,8 +11,8 @@ export class HighchartsChartComponent implements OnInit {
   data: any = [];
   chart: Chart
 
-  ngOnInit(): void {
-    this.data = window.history.state.data;  // Receive data from form after submission
+  ngOnInit(): void {  // On chart load, the code block here will execute
+    this.data = JSON.parse(localStorage.getItem("values")!);  // Getting data after form submission
     this.chart = new Chart({
       title: {  // The chart's main title
         text: 'Monthly Average Rainfall'  // The title of the chart
