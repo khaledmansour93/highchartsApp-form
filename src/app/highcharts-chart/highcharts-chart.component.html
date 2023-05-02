@@ -1,2 +1,13 @@
-<!-- Chart to be displayed -->
-<div [chart]="chart"></div>
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        <label for="chartType">Chart Type</label>
+    </div>
+    <div class="d-flex justify-content-center">
+        <select name="chartType" id="chartType" class="form-control w-auto shadow-none" (change)="onChange($event);">
+            <option value="" disabled selected>Please select a type</option>
+            <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+        </select>
+    </div>
+    <!-- Chart to be displayed -->
+    <div class="mt-5" [chart]="chart"></div>
+</div>
